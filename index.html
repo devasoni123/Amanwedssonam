@@ -32,7 +32,6 @@
       position: relative;
     }
 
-    /* Divine Background Ganesh Art & Mantra Layer */
     .divine-bg {
       position: fixed;
       inset: 0;
@@ -77,17 +76,13 @@
       border-radius: 18px;
     }
 
-    .page-layer {
-      position: relative;
-      z-index: 2;
-    }
+    .page-layer { position: relative; z-index: 2; }
 
     h1, h2, h3, .serif {
       font-family: 'Cormorant Garamond', 'Noto Sans Devanagari', serif;
       font-weight: 700;
     }
 
-    /* Entry Gate */
     #entry-gate {
       position: fixed;
       inset: 0;
@@ -137,7 +132,6 @@
       margin-bottom: 24px;
     }
 
-    /* Scatter / Bikharne Wale Items Overlay */
     #scatter-stage {
       position: fixed;
       inset: 0;
@@ -161,7 +155,6 @@
       100% { transform: translate3d(var(--dx, 40px), -112vh, 0) rotate(var(--rot, 240deg)) scale(1.15); opacity: 0; }
     }
 
-    /* Welcome Toast Banner After Enter */
     #welcome-toast {
       position: fixed;
       top: 16px;
@@ -183,7 +176,6 @@
     #welcome-toast.show { transform: translate(-50%, 0); }
     #welcome-toast.hide { transform: translate(-50%, -150%); opacity: 0; }
 
-    /* Simple Music Button */
     #music-toggle {
       position: fixed;
       right: 18px;
@@ -200,12 +192,7 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
     }
 
-    .container {
-      max-width: 940px;
-      margin: 0 auto;
-      padding: 0 18px;
-    }
-
+    .container { max-width: 940px; margin: 0 auto; padding: 0 18px; }
     section { padding: 44px 0; }
 
     .btn-primary {
@@ -274,7 +261,29 @@
     .hero-meta { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 
-    /* Rajasthani + Punjabi Cartoon Stage */
+    .welcome-banner-box {
+      background: linear-gradient(135deg, #fff9ef, #faebd3);
+      border: 1.5px solid var(--gold);
+      border-radius: 24px;
+      padding: 18px 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .welcome-banner-title {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: clamp(1.2rem, 4vw, 1.55rem);
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .welcome-banner-sub {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
     .cartoon-stage {
       background: linear-gradient(145deg, #fffaf1 0%, #faebd4 60%, #f5dec0 100%);
       border: 2px solid var(--gold);
@@ -285,13 +294,13 @@
 
     .cartoon-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
       margin-top: 12px;
     }
 
     .cartoon-box {
-      background: rgba(255, 253, 249, 0.92);
+      background: rgba(255, 253, 249, 0.94);
       border: 1.5px solid var(--border);
       border-radius: 22px;
       padding: 16px 12px;
@@ -300,77 +309,40 @@
       overflow: hidden;
     }
 
-    .cartoon-svg {
-      width: 156px;
-      height: 156px;
-      margin: 0 auto 8px;
-      display: block;
-    }
+    .cartoon-svg { width: 156px; height: 156px; margin: 0 auto 8px; display: block; }
+    .dholak-group { transform-origin: 78px 95px; animation: dholakThump 0.55s ease-in-out infinite alternate; }
+    .stick-left { transform-origin: 54px 86px; animation: stickBeatLeft 0.36s ease-in-out infinite alternate; }
+    .stick-right { transform-origin: 104px 86px; animation: stickBeatRight 0.36s ease-in-out infinite alternate; }
+    .dancer-body { transform-origin: 78px 115px; animation: bhangraBounce 0.65s ease-in-out infinite; }
+    .dancer-arms { transform-origin: 78px 72px; animation: bhangraArms 0.65s ease-in-out infinite alternate; }
+    .dancer-legs { transform-origin: 78px 110px; animation: bhangraSteps 0.65s ease-in-out infinite alternate; }
+    .groom-sway { transform-origin: 78px 116px; animation: softSway 1.5s ease-in-out infinite alternate; }
+    .bride-sway { transform-origin: 78px 126px; animation: softSway 1.6s ease-in-out infinite alternate-reverse; }
 
-    .dholak-group {
-      transform-origin: 78px 95px;
-      animation: dholakThump 0.55s ease-in-out infinite alternate;
+    @keyframes softSway {
+      0% { transform: rotate(-2deg) translateY(0px); }
+      100% { transform: rotate(2deg) translateY(-3px); }
     }
-
-    .stick-left {
-      transform-origin: 54px 86px;
-      animation: stickBeatLeft 0.36s ease-in-out infinite alternate;
-    }
-
-    .stick-right {
-      transform-origin: 104px 86px;
-      animation: stickBeatRight 0.36s ease-in-out infinite alternate;
-    }
-
-    .dancer-body {
-      transform-origin: 78px 115px;
-      animation: bhangraBounce 0.65s ease-in-out infinite;
-    }
-
-    .dancer-arms {
-      transform-origin: 78px 72px;
-      animation: bhangraArms 0.65s ease-in-out infinite alternate;
-    }
-
-    .dancer-legs {
-      transform-origin: 78px 110px;
-      animation: bhangraSteps 0.65s ease-in-out infinite alternate;
-    }
-
-    .paused-anim .dholak-group,
-    .paused-anim .stick-left,
-    .paused-anim .stick-right,
-    .paused-anim .dancer-body,
-    .paused-anim .dancer-arms,
-    .paused-anim .dancer-legs {
-      animation-play-state: paused;
-    }
-
     @keyframes dholakThump {
       0% { transform: scale(1) rotate(-1.5deg); }
       100% { transform: scale(1.04) rotate(1.5deg); }
     }
-
     @keyframes stickBeatLeft {
       0% { transform: rotate(-18deg); }
       100% { transform: rotate(22deg); }
     }
-
     @keyframes stickBeatRight {
       0% { transform: rotate(18deg); }
       100% { transform: rotate(-22deg); }
     }
-
     @keyframes bhangraBounce {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-7px) rotate(-2deg); }
     }
-
     @keyframes bhangraArms {
       0% { transform: rotate(-12deg); }
       100% { transform: rotate(14deg); }
     }
-
     @keyframes bhangraSteps {
       0% { transform: rotate(-6deg); }
       100% { transform: rotate(7deg); }
@@ -394,11 +366,7 @@
       color: var(--ink);
     }
 
-    .cartoon-subline {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
+    .cartoon-subline { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
     .section-header { text-align: center; margin-bottom: 22px; }
     .section-tag {
@@ -412,7 +380,6 @@
     }
     .section-title { font-size: clamp(1.9rem, 5.5vw, 2.7rem); line-height: 1.15; }
 
-    /* Round / Scroll Photo Carousel */
     .carousel-shell {
       background: var(--card);
       border: 1.5px solid var(--border);
@@ -421,13 +388,7 @@
       box-shadow: 0 16px 38px rgba(58, 28, 10, 0.07);
     }
 
-    .round-stage {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: 10px 4px;
-    }
+    .round-stage { display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 10px 4px; }
 
     .round-frame {
       width: min(74vw, 340px);
@@ -438,21 +399,16 @@
       box-shadow: 0 18px 36px rgba(58, 28, 10, 0.16);
       background: #efe2cf;
       flex-shrink: 0;
-      transition: transform 0.5s ease;
+      transition: transform 0.4s ease;
     }
 
-    .round-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .round-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .carousel-controls {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       margin-top: 16px;
       flex-wrap: wrap;
     }
@@ -461,8 +417,7 @@
       display: flex;
       gap: 12px;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 16px 4px 6px;
+      padding: 14px 4px 6px;
       margin-top: 14px;
       border-top: 1px solid var(--border);
     }
@@ -474,7 +429,6 @@
       overflow: hidden;
       border: 2px solid transparent;
       flex-shrink: 0;
-      scroll-snap-align: center;
       cursor: pointer;
       background: #efe2cf;
     }
@@ -482,12 +436,7 @@
     .strip-thumb.active { border-color: var(--accent); transform: scale(1.04); }
     .strip-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* Scratch & Countdown */
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
     .box-card {
       background: var(--card);
@@ -521,20 +470,9 @@
 
     .scratch-date { font-size: 2rem; color: var(--accent); font-weight: 700; }
 
-    #scratch-canvas {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+    #scratch-canvas { position: relative; z-index: 2; width: 100%; height: 100%; display: block; }
 
-    .countdown-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-top: 14px;
-    }
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 14px; }
 
     .time-box {
       background: var(--bg);
@@ -546,7 +484,6 @@
     .time-num { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; line-height: 1; }
     .time-label { font-size: 11px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
 
-    /* Schedule */
     .timeline { display: grid; gap: 12px; }
     .event-card {
       background: var(--card);
@@ -576,7 +513,6 @@
       text-align: center;
     }
 
-    /* RSVP */
     .rsvp-card {
       background: var(--card);
       border: 1.5px solid var(--border);
@@ -587,21 +523,11 @@
       box-shadow: 0 18px 42px rgba(58, 28, 10, 0.08);
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-
+    .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
     .form-group { margin-bottom: 14px; }
     .form-group.full { grid-column: 1 / -1; }
 
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
 
     input, select, textarea {
       width: 100%;
@@ -624,35 +550,16 @@
       border: 1px solid var(--border);
     }
 
-    .fn-check {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      margin: 0;
-      font-weight: 500;
-    }
-
+    .fn-check { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 0; font-weight: 500; }
     .fn-check input { width: auto; margin: 0; }
 
-    #rsvp-status {
-      margin-top: 14px;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center;
-    }
+    #rsvp-status { margin-top: 14px; font-size: 14px; font-weight: 600; text-align: center; }
 
-    footer {
-      text-align: center;
-      padding: 32px 18px 84px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    footer { text-align: center; padding: 32px 18px 84px; color: var(--muted); font-size: 13px; }
   </style>
 </head>
 <body>
 
-  <!-- Background: Ganesh Ji Art + Sacred Mantra -->
   <div class="divine-bg" aria-hidden="true">
     <svg class="divine-ganesh-svg" viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-width="2.2">
       <circle cx="120" cy="120" r="108" stroke-dasharray="6 6" />
@@ -672,21 +579,22 @@
     </div>
   </div>
 
-  <!-- Scatter / Bikharne Wale Balloons, Petals & Sparkles -->
   <div id="scatter-stage" aria-hidden="true"></div>
 
-  <!-- Welcome Toast -->
   <div id="welcome-toast">
-    <strong>🙏 हार्दिक स्वागत है!</strong><br>
-    <span>म्हारे आंगणे ढोलक बाजे • अमन &amp; सोनम के शुभ विवाह में आपका सादर स्वागत है।</span>
+    <strong>🙏 आपका हार्दिक स्वागत है!</strong><br>
+    <span>अमन &amp; सोनम के शुभ विवाह समारोह में आपका सादर स्वागत है।</span>
   </div>
 
-  <!-- Audio & Simple Off/On Button -->
-  <audio id="bg-music" src="song.mp3" loop preload="auto"></audio>
+  <audio id="bg-music" loop preload="auto">
+    <source src="song.mp3.m4r" type="audio/mp4" />
+    <source src="song.mp3.m4r" type="audio/mpeg" />
+    <source src="song.mp3" type="audio/mpeg" />
+    <source src="song.m4a" type="audio/mp4" />
+  </audio>
   <button id="music-toggle" type="button">♪ Off</button>
 
   <div class="page-layer">
-    <!-- Entry Gate -->
     <div id="entry-gate">
       <div class="gate-card">
         <div class="gate-om">॥ श्री गणेशाय नमः • वक्रतुण्ड महाकाय ॥</div>
@@ -698,7 +606,6 @@
       </div>
     </div>
 
-    <!-- Hero -->
     <header class="hero">
       <div class="container">
         <div class="hero-card">
@@ -715,36 +622,34 @@
       </div>
     </header>
 
-    <!-- Rajasthani + Punjabi Cartoon Dholak & Dance Section -->
     <section id="cartoon-celebration">
       <div class="container">
+        <div class="welcome-banner-box">
+          <div class="welcome-banner-title">🙏 आपका हार्दिक स्वागत है!</div>
+          <div class="welcome-banner-sub">म्हारे आंगणे ढोलक बाजे • अमन &amp; सोनम के शुभ विवाह समारोह में आपका सादर अभिनंदन है।</div>
+        </div>
+
         <div class="section-header">
-          <span class="section-tag">Rajasthani &amp; Punjabi Celebration</span>
-          <h2 class="section-title">ढोलक बाजे • नाच गाणो चालू</h2>
+          <span class="section-tag">Rajasthani, Punjabi, Dulha &amp; Dulhan</span>
+          <h2 class="section-title">ढोलक, नाच, दूल्हा &amp; दुल्हन</h2>
         </div>
 
         <div id="cartoon-stage" class="cartoon-stage">
           <div class="cartoon-grid">
-            <!-- Character 1: Rajasthani Cartoon Dholak Player -->
             <div class="cartoon-box">
               <span class="cartoon-badge">राजस्थानी कार्टून • ढोलक वादन</span>
               <svg class="cartoon-svg" viewBox="0 0 156 156">
-                <!-- Music notes -->
                 <text x="18" y="34" font-size="16" fill="#b84a14">♪</text>
                 <text x="126" y="28" font-size="16" fill="#c9943b">♫</text>
-                <!-- Rajasthani Safa / Pagri -->
                 <ellipse cx="78" cy="36" rx="26" ry="12" fill="#d9381e" />
                 <path d="M56 36 Q78 22 100 36 Q92 44 64 44 Z" fill="#f5b727" />
                 <path d="M96 38 L112 52" stroke="#d9381e" stroke-width="5" stroke-linecap="round" />
-                <!-- Face + Rajasthani Moochein -->
                 <circle cx="78" cy="52" r="14" fill="#f6c699" />
                 <circle cx="73" cy="50" r="1.8" fill="#2a1810" />
                 <circle cx="83" cy="50" r="1.8" fill="#2a1810" />
                 <path d="M68 57 Q78 53 88 57" stroke="#3b1d0e" stroke-width="2.4" fill="none" stroke-linecap="round" />
                 <path d="M74 61 Q78 64 82 61" stroke="#7a2e16" stroke-width="1.8" fill="none" stroke-linecap="round" />
-                <!-- Angrakha / Kurta -->
                 <path d="M58 68 L98 68 L103 108 L53 108 Z" fill="#f7941d" stroke="#8a3b08" stroke-width="2" />
-                <!-- Dholak + Sticks -->
                 <g class="dholak-group">
                   <ellipse cx="78" cy="94" rx="25" ry="15" fill="#7c2d12" stroke="#2a1810" stroke-width="2" />
                   <ellipse cx="55" cy="94" rx="6" ry="14" fill="#fff7e6" stroke="#2a1810" stroke-width="2" />
@@ -759,42 +664,35 @@
                   <line x1="102" y1="86" x2="116" y2="70" stroke="#4a2511" stroke-width="3.5" stroke-linecap="round" />
                   <circle cx="117" cy="69" r="4" fill="#c92a2a" />
                 </g>
-                <!-- Legs -->
                 <rect x="64" y="108" width="9" height="28" rx="4" fill="#fff6e5" stroke="#2a1810" stroke-width="1.8" />
                 <rect x="83" y="108" width="9" height="28" rx="4" fill="#fff6e5" stroke="#2a1810" stroke-width="1.8" />
                 <ellipse cx="68" cy="138" rx="8" ry="4" fill="#5c240c" />
                 <ellipse cx="88" cy="138" rx="8" ry="4" fill="#5c240c" />
               </svg>
               <div class="cartoon-line">म्हारे आंगणे ढोलक बाजे!</div>
-              <div class="cartoon-subline">Rajasthani dholak beat ke saath shaadi ki khushi</div>
+              <div class="cartoon-subline">आपका स्वागत है — ढोलक की थाप पर जश्न</div>
             </div>
 
-            <!-- Character 2: Punjabi Bhangra Cartoon Dancer -->
             <div class="cartoon-box">
               <span class="cartoon-badge">पंजाबी कार्टून • भंगड़ा डांस</span>
               <svg class="cartoon-svg" viewBox="0 0 156 156">
                 <text x="20" y="30" font-size="15" fill="#e03131">✦</text>
                 <text x="122" y="34" font-size="16" fill="#2f9e44">♪</text>
                 <g class="dancer-body">
-                  <!-- Punjabi Pagri -->
                   <ellipse cx="78" cy="35" rx="25" ry="12" fill="#f08c00" />
                   <path d="M56 35 Q78 23 100 35" stroke="#fff3bf" stroke-width="3" fill="none" />
-                  <!-- Face -->
                   <circle cx="78" cy="51" r="13.5" fill="#f7c89c" />
                   <circle cx="73" cy="49" r="1.8" fill="#2a1810" />
                   <circle cx="83" cy="49" r="1.8" fill="#2a1810" />
                   <path d="M72 58 Q78 63 84 58" stroke="#7a2e16" stroke-width="2.2" fill="none" stroke-linecap="round" />
-                  <!-- Raising Bhangra Arms -->
                   <g class="dancer-arms">
                     <path d="M62 72 L38 44" stroke="#f7c89c" stroke-width="7" stroke-linecap="round" />
                     <path d="M94 72 L118 44" stroke="#f7c89c" stroke-width="7" stroke-linecap="round" />
                     <circle cx="38" cy="43" r="4.5" fill="#f7c89c" />
                     <circle cx="118" cy="43" r="4.5" fill="#f7c89c" />
                   </g>
-                  <!-- Kurta + Waistcoat -->
                   <rect x="61" y="67" width="34" height="40" rx="8" fill="#1971c2" stroke="#183153" stroke-width="2" />
                   <rect x="67" y="67" width="22" height="32" rx="4" fill="#e03131" />
-                  <!-- Bhangra Steps -->
                   <g class="dancer-legs">
                     <path d="M68 107 L56 135" stroke="#f7c89c" stroke-width="8" stroke-linecap="round" />
                     <path d="M88 107 L102 133" stroke="#f7c89c" stroke-width="8" stroke-linecap="round" />
@@ -803,21 +701,61 @@
                   </g>
                 </g>
               </svg>
-              <div class="cartoon-line">बल्ले बल्ले! अमन &amp; सोनम दा ब्याह!</div>
-              <div class="cartoon-subline">Punjabi bhangra energy aur jashn ka mahaul</div>
+              <div class="cartoon-line">बल्ले बल्ले! आपका स्वागत है!</div>
+              <div class="cartoon-subline">खुशियों भरे डांस के साथ स्वागत सत्कार</div>
             </div>
-          </div>
 
-          <div style="text-align:center; margin-top:14px;">
-            <button id="toggle-dance-btn" class="btn-outline" type="button">
-              💃 Dholak &amp; Dance: Chal Raha Hai (Pause Karein)
-            </button>
+            <div class="cartoon-box">
+              <span class="cartoon-badge">दूल्हा कार्टून • गोद / आसन पर विराजमान</span>
+              <svg class="cartoon-svg" viewBox="0 0 156 156">
+                <text x="20" y="28" font-size="14" fill="#c9943b">✦</text>
+                <text x="124" y="28" font-size="14" fill="#c9943b">✦</text>
+                <rect x="42" y="108" width="72" height="26" rx="10" fill="#8d3912" stroke="#2a1810" stroke-width="2" />
+                <rect x="48" y="102" width="60" height="10" rx="5" fill="#f5b727" />
+                <g class="groom-sway">
+                  <ellipse cx="78" cy="34" rx="22" ry="11" fill="#fff9eb" stroke="#c9943b" stroke-width="2" />
+                  <path d="M60 34 Q78 24 96 34" stroke="#b84a14" stroke-width="2.5" fill="none" />
+                  <path d="M78 22 L78 44" stroke="#d9381e" stroke-width="3" />
+                  <circle cx="78" cy="50" r="13" fill="#f6c699" />
+                  <circle cx="73" cy="48" r="1.8" fill="#2a1810" />
+                  <circle cx="83" cy="48" r="1.8" fill="#2a1810" />
+                  <path d="M72 57 Q78 62 84 57" stroke="#7a2e16" stroke-width="2" fill="none" stroke-linecap="round" />
+                  <rect x="61" y="65" width="34" height="39" rx="8" fill="#fffdf7" stroke="#c9943b" stroke-width="2" />
+                  <path d="M78 65 L78 104" stroke="#d9381e" stroke-width="3" stroke-dasharray="4 3" />
+                  <path d="M62 74 L48 88" stroke="#f6c699" stroke-width="6.5" stroke-linecap="round" />
+                  <path d="M94 74 L108 88" stroke="#f6c699" stroke-width="6.5" stroke-linecap="round" />
+                </g>
+              </svg>
+              <div class="cartoon-line">दूल्हा जी का सादर अभिनंदन!</div>
+              <div class="cartoon-subline">अमन — सुंदर आसन पर विराजमान, आपका स्वागत है</div>
+            </div>
+
+            <div class="cartoon-box">
+              <span class="cartoon-badge">दुल्हन कार्टून • शुभ स्वागत</span>
+              <svg class="cartoon-svg" viewBox="0 0 156 156">
+                <text x="20" y="28" font-size="14" fill="#d9381e">❀</text>
+                <text x="124" y="28" font-size="14" fill="#d9381e">❀</text>
+                <g class="bride-sway">
+                  <path d="M54 52 C54 26, 102 26, 102 52 L106 82 L50 82 Z" fill="#c92a2a" />
+                  <path d="M78 26 L78 36 M73 31 L83 31" stroke="#ffd43b" stroke-width="2.5" stroke-linecap="round" />
+                  <circle cx="78" cy="50" r="13" fill="#f7c89c" />
+                  <circle cx="78" cy="39" r="2.2" fill="#e03131" />
+                  <circle cx="73" cy="49" r="1.8" fill="#2a1810" />
+                  <circle cx="83" cy="49" r="1.8" fill="#2a1810" />
+                  <path d="M72 57 Q78 62 84 57" stroke="#7a2e16" stroke-width="2" fill="none" stroke-linecap="round" />
+                  <path d="M62 66 L94 66 L108 134 L48 134 Z" fill="#d9381e" stroke="#f5b727" stroke-width="2" />
+                  <path d="M54 134 L102 134" stroke="#f5b727" stroke-width="4" stroke-linecap="round" />
+                  <path d="M63 75 L46 92" stroke="#f7c89c" stroke-width="6" stroke-linecap="round" />
+                  <path d="M93 75 L110 92" stroke="#f7c89c" stroke-width="6" stroke-linecap="round" />
+                </g>
+              </svg>
+              <div class="cartoon-line">दुल्हन जी संग हार्दिक स्वागत!</div>
+              <div class="cartoon-subline">सोनम — मंगलमय विवाह में आपका स्वागत है</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Round + Scroll Photo Section -->
     <section>
       <div class="container">
         <div class="section-header">
@@ -834,7 +772,6 @@
 
           <div class="carousel-controls">
             <button id="prev-photo-btn" class="btn-outline" type="button">← Prev</button>
-            <button id="toggle-slide-btn" class="btn-primary" type="button">Auto Round: On</button>
             <button id="next-photo-btn" class="btn-outline" type="button">Next →</button>
           </div>
 
@@ -843,7 +780,6 @@
       </div>
     </section>
 
-    <!-- Scratch + Countdown -->
     <section>
       <div class="container">
         <div class="two-col">
@@ -876,7 +812,6 @@
       </div>
     </section>
 
-    <!-- Functions Schedule -->
     <section id="schedule">
       <div class="container">
         <div class="section-header">
@@ -905,7 +840,6 @@
       </div>
     </section>
 
-    <!-- Full Details RSVP Form -->
     <section id="rsvp">
       <div class="container">
         <div class="section-header">
@@ -980,20 +914,22 @@
     </section>
 
     <footer>
-      ॥ श्री गणेशाय नमः ॥ • With love &amp; warmth — <strong>Soni Family</strong> • Aman &amp; Sonam • Neemuch, MP
+      ॥ श्री गणेशाय नमः ॥ • आपका हार्दिक स्वागत • <strong>Soni Family</strong> • Aman &amp; Sonam • Neemuch, MP
     </footer>
   </div>
 
   <script>
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxB6u79KyF_CC3U49-CyuuGffxdCExtNsfwtHZgQ-EE2ZAyvjuicGpyo3irKLdx6pg0/exec";
 
-    // Music Auto-Play on Enter + Simple Off/On Button
     const gate = document.getElementById("entry-gate");
     const openBtn = document.getElementById("open-invite-btn");
     const music = document.getElementById("bg-music");
     const musicBtn = document.getElementById("music-toggle");
     const scatterStage = document.getElementById("scatter-stage");
     const welcomeToast = document.getElementById("welcome-toast");
+
+    let hasEntered = false;
+    let musicStarted = false;
 
     function syncMusicButton() {
       musicBtn.textContent = music.paused ? "♪ Off" : "♪ On";
@@ -1004,13 +940,16 @@
       music.volume = 1;
       try {
         await music.play();
-      } catch (e) {}
+        musicStarted = true;
+      } catch (e) {
+        musicStarted = false;
+      }
       syncMusicButton();
     }
 
     function launchScatterItems() {
       const icons = ["🎈", "🎊", "🎉", "🌸", "🌺", "✨", "💛", "🧡"];
-      for (let i = 0; i < 34; i++) {
+      for (let i = 0; i < 36; i++) {
         const el = document.createElement("div");
         el.className = "scatter-item";
         el.textContent = icons[i % icons.length];
@@ -1030,15 +969,21 @@
       setTimeout(() => {
         welcomeToast.classList.add("hide");
         welcomeToast.classList.remove("show");
-      }, 4200);
+      }, 4500);
     }
 
     openBtn.addEventListener("click", async () => {
+      hasEntered = true;
       gate.classList.add("hidden");
       await playSongNow();
       launchScatterItems();
       showWelcomeToast();
     });
+
+    document.addEventListener("pointerdown", async (e) => {
+      if (!hasEntered || musicStarted || e.target === musicBtn) return;
+      await playSongNow();
+    }, { passive: true });
 
     musicBtn.addEventListener("click", async () => {
       if (music.paused) {
@@ -1049,20 +994,6 @@
       }
     });
 
-    // Rajasthani + Punjabi Cartoon Dance Toggle
-    const cartoonStage = document.getElementById("cartoon-stage");
-    const toggleDanceBtn = document.getElementById("toggle-dance-btn");
-    let danceActive = true;
-
-    toggleDanceBtn.addEventListener("click", () => {
-      danceActive = !danceActive;
-      cartoonStage.classList.toggle("paused-anim", !danceActive);
-      toggleDanceBtn.textContent = danceActive
-        ? "💃 Dholak & Dance: Chal Raha Hai (Pause Karein)"
-        : "▶ Dholak & Dance: Ruka Hua Hai (Chalao)";
-    });
-
-    // Round & Scroll Photo Carousel
     const candidatePhotos = [
       "IMG_0194.jpeg",
       "IMG_0198.jpeg",
@@ -1082,11 +1013,9 @@
     const photoStrip = document.getElementById("photo-strip");
     const prevPhotoBtn = document.getElementById("prev-photo-btn");
     const nextPhotoBtn = document.getElementById("next-photo-btn");
-    const toggleSlideBtn = document.getElementById("toggle-slide-btn");
 
     let activePhotos = [];
     let currentIdx = 0;
-    let autoSlide = true;
 
     function renderStrip() {
       photoStrip.innerHTML = "";
@@ -1099,25 +1028,22 @@
         thumb.appendChild(im);
         thumb.addEventListener("click", () => {
           currentIdx = idx;
-          updateCarousel(true);
+          updateCarousel();
         });
         photoStrip.appendChild(thumb);
       });
     }
 
-    function updateCarousel(scrollThumb = false) {
+    function updateCarousel() {
       if (!activePhotos.length) return;
       roundMainImg.style.transform = "scale(0.95) rotate(-2deg)";
       setTimeout(() => {
         roundMainImg.src = activePhotos[currentIdx];
         roundMainImg.style.transform = "scale(1) rotate(0deg)";
-      }, 150);
+      }, 140);
 
       Array.from(photoStrip.children).forEach((child, idx) => {
         child.classList.toggle("active", idx === currentIdx);
-        if (scrollThumb && idx === currentIdx) {
-          child.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-        }
       });
     }
 
@@ -1151,27 +1077,15 @@
     prevPhotoBtn.addEventListener("click", () => {
       if (!activePhotos.length) return;
       currentIdx = (currentIdx - 1 + activePhotos.length) % activePhotos.length;
-      updateCarousel(true);
+      updateCarousel();
     });
 
     nextPhotoBtn.addEventListener("click", () => {
       if (!activePhotos.length) return;
       currentIdx = (currentIdx + 1) % activePhotos.length;
-      updateCarousel(true);
+      updateCarousel();
     });
 
-    toggleSlideBtn.addEventListener("click", () => {
-      autoSlide = !autoSlide;
-      toggleSlideBtn.textContent = autoSlide ? "Auto Round: On" : "Auto Round: Off";
-    });
-
-    setInterval(() => {
-      if (!autoSlide || activePhotos.length <= 1) return;
-      currentIdx = (currentIdx + 1) % activePhotos.length;
-      updateCarousel(true);
-    }, 2600);
-
-    // Countdown
     const targetDate = new Date("2027-03-02T00:00:00+05:30").getTime();
     function updateCountdown() {
       const diff = Math.max(0, targetDate - Date.now());
@@ -1183,7 +1097,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // Scratch Card
     const canvas = document.getElementById("scratch-canvas");
     const ctx = canvas.getContext("2d");
     const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
@@ -1218,7 +1131,6 @@
     window.addEventListener("touchend", () => { scratching = false; });
     canvas.addEventListener("touchmove", scratchMove, { passive: false });
 
-    // Full RSVP Submit
     const rsvpForm = document.getElementById("rsvp-form");
     const rsvpSubmit = document.getElementById("rsvp-submit");
     const rsvpStatus = document.getElementById("rsvp-status");
